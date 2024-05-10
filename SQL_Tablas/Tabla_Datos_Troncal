@@ -1,0 +1,11 @@
+create table Datos_Troncal (
+	Id_Trazado_Troncal varchar (40), 
+	Troncal_Estacion varchar (50),
+	Primary key(Id_Trazado_Troncal));
+
+Copy Datos_Troncal (Id_Trazado_Troncal, Troncal_Estacion)
+From 'C:\Program Files\PostgreSQL\14\pgAdmin 4\runtime\Datos\Datos_Troncal.csv'
+with (Format csv, header True, delimiter ';', encoding 'UTF8');
+
+select *
+from Datos_Troncal
