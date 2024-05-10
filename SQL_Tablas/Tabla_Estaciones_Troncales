@@ -1,0 +1,20 @@
+create table Estaciones_Troncales(
+	Codigo_Estacion integer,
+	Nombre_Estacion varchar (80),
+	Id_Trazado_Troncal varchar (40), 
+	Numero_Edited_User integer,
+	Last_Edited_Date date,
+	Last_Edited_Hour time, 
+	foreign key(Codigo_Estacion) references Coordemadas_Estacion,
+	foreign key(Nombre_Estacion) references Caracteristicas_Estacion,
+	foreign key(Id_Trazado_Troncal) references Datos_Troncal,
+	foreign key(Numero_Edited_User) references Edited_User);
+
+Copy Estaciones_Troncales (Codigo_Estacion, Nombre_Estacion, Id_Trazado_Troncal, Numero_Edited_User, Last_Edited_Date, Last_Edited_Hour)
+From 'C:\Program Files\PostgreSQL\14\pgAdmin 4\runtime\Datos\Estaciones_Troncales_Transmilenio.csv'
+with (Format csv, header True, delimiter ';', encoding 'UTF8');
+
+select *
+from Estaciones_Troncales
+
+--- Nota: Para esta tabla necesitamos SET DateStyle To 'sql, dmy' para organizar las fechas como día/mes/año ---
