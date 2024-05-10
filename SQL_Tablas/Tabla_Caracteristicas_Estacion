@@ -1,0 +1,16 @@
+create table Caracteristicas_Estacion(
+	Nombre_Estacion varchar (80), 
+	Ubicacion_Estacion varchar (60), 
+	Numero_Vagones_Estacion  integer, 
+	Numero_Accesos_Estacion integer, 
+	Biciestacion integer, 
+	Componente_Wifi varchar(15),
+	Componente_Aplicacion  varchar (15),
+	primary key(Nombre_Estacion));
+
+Copy Caracteristicas_Estacion (Nombre_estacion, Ubicacion_Estacion, Numero_Vagones_Estacion, Numero_Accesos_Estacion, Biciestacion, Componente_Wifi, Componente_Aplicacion)
+From 'C:\Program Files\PostgreSQL\14\pgAdmin 4\runtime\Datos\Carcteristicas_Estacion.csv'
+with (Format csv, header True, delimiter ';', encoding 'UTF8');
+
+select *
+from Caracteristicas_Estacion
