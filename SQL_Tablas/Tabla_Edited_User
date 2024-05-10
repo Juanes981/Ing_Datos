@@ -1,0 +1,11 @@
+create table Edited_User (
+	Numero_Edit_User integer, 
+	Last_Edited_User varchar (30),
+	primary key(Numero_Edit_User));
+
+Copy Edited_User (Numero_Edit_User, Last_Edited_User)
+From 'C:\Program Files\PostgreSQL\14\pgAdmin 4\runtime\Datos\Editer_User.csv'
+with (Format csv, header True, delimiter ';', encoding 'UTF8');
+
+select *
+from Edited_User
