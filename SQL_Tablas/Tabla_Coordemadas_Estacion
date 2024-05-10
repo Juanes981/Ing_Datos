@@ -1,0 +1,15 @@
+create table Coordemadas_Estacion (
+	Codigo_Estacion integer, 
+	X varchar(50), 
+	Y varchar(50), 
+	Coordenada_X_Estacion varchar(50), 
+	Coordenada_Y_Estacion varchar(50), 
+	Longitud_Estacion varchar(50),
+	primary key(Codigo_Estacion));
+
+Copy Coordemadas_Estacion (Codigo_Estacion, X, Y, Coordenada_X_Estacion, Coordenada_Y_Estacion, Longitud_Estacion)
+From 'C:\Program Files\PostgreSQL\14\pgAdmin 4\runtime\Datos\Coordenadas_Estacion.csv'
+with (Format csv, header True, delimiter ';', encoding 'UTF8');
+
+select *
+from Coordemadas_Estacion
