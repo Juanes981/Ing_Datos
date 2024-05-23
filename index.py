@@ -33,6 +33,11 @@ try:
 
     # Diseño de la aplicación
     app.layout = html.Div(children=[
+
+        html.Img(src = 'Mer.drawio.png'),
+        
+        html.P('Hola'),
+
         html.H1(children='Mi Dashboard con Dash'),
 
         html.Div(children='''
