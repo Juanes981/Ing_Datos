@@ -1,0 +1,35 @@
+--Selección de estaciones en la NQS quack
+select Nombre_Estacion, Codigo_Estacion
+from Estaciones_Troncales
+where Id_Trazado_Troncal in (select Id_Trazado_Troncal
+							from Datos_Troncal
+							where Troncal_Estacion = 'NQS-E' OR Troncal_Estacion = 'NQS-G')
+--Sirve :D
+
+--Numero de estaciones en cada troncal
+select t.Troncal_Estacion, count(e.Codigo_Estacion) as Numero_Estaciones
+from Datos_Troncal t
+join Estaciones_Troncales e on e.Id_Trazado_Troncal = t.Id_Trazado_Troncal
+group by t.Troncal_Estacion
+
+---Estaciones mas optimas 
+select Nombre_Estacion, Numero_Vagones_Estacion, Numero_Accesos_Estacion, Biciestacion, Componente_Wifi
+from Caracteristicas_Estacion
+where Numero_Vagones_Estacion < 4 and Numero_Accesos_Estacion = 2 and Biciestacion < 1 and Componente_Wifi = 'Si' 
+
+---Estaciones menos optimas 
+select Nombre_Estacion, Numero_Vagones_Estacion, Numero_Accesos_Estacion, Biciestacion, Componente_Wifi
+from Caracteristicas_Estacion
+where Numero_Vagones_Estacion >= 1 and Numero_Accesos_Estacion = 1 and Biciestacion >= 1 and Componente_Wifi = 'No'
+
+select Nombre_Estacion, Numero_Vagones_Estacion 
+from Caracteristicas_Estacion
+
+select Nombre_Estacion, Biciestacion 
+from Caracteristicas_Estacion
+
+select Nombre_Estacion, Componente_Wifi 
+from Caracteristicas_Estacion
+
+select Nombre_Estacion, Numero_Accesos_Estacion 
+from Caracteristicas_Estacion
