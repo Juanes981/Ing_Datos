@@ -9,9 +9,9 @@ try:
         database='Carga_datos',  # Nombre de la base de datos a la que queremos conectarnos
         port='5433' # Puerto en el que está escuchando el servidor de base de datos
     )
+
     print("Conexión exitosa") # Si la conexión es exitosa, imprimimos un mensaje
     cursor = connection.cursor() # Creamos un objeto cursor para ejecutar comandos SQL
-
 
     # Tabla1 Estaciones_Troncales_Transmilenio	
     cursor.execute("SELECT * FROM Estaciones_Troncales_Transmilenio")  # Ejecutamos una consulta SQL para seleccionar todos los datos de la tabla "Estaciones_Troncales_Transmilenio"
