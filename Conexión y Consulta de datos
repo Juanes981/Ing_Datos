@@ -19,8 +19,8 @@ try:
     for row in rows_Estaciones_Troncales_Transmilenio:
         print(row)
 
-    # Tabla2 Carcteristicas_Estacion	
-    cursor.execute("SELECT * FROM Carcteristicas_Estacion")  # Ejecutamos una consulta SQL para seleccionar todos los datos de la tabla "Carcteristicas_Estacion"
+    # Tabla2 Caracteristicas_Estacion	
+    cursor.execute("SELECT * FROM Caracteristicas_Estacion")  # Ejecutamos una consulta SQL para seleccionar todos los datos de la tabla "Carcteristicas_Estacion"
     rows_Carcteristicas_Estacion = cursor.fetchall()  # Obtenemos todas las filas resultantes de la consulta
     for row in rows_Carcteristicas_Estacion:
         print(row)
