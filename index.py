@@ -19,60 +19,73 @@ try:
 
 
     # Ejecutar la consulta SQL para obtener los datos de la tabla "Numeros Vagones"
-    consulta1 = "select Nombre_Estacion, Numero_Vagones_Estacion from Caracteristicas_Estacion"
+    consulta1 = "select Nombre_Estacion, Numero_Vagones_Estacion from Caracteristicas_Estacion where Numero_Vagones_Estacion = 5 or Numero_Vagones_Estacion = 6 group by Nombre_Estacion order by Numero_Vagones_Estacion asc"
     cursor.execute(consulta1)
 
     # Obtener los resultados de la consulta y cargarlos en un DataFrame de pandas
     rows_car = cursor.fetchall()
     car_es = pd.DataFrame(rows_car, columns=['Nombre_Estacion', 'Numero_Vagones_Estacion'])
 
+    # Ejecutar la consulta SQL para obtener los datos de la tabla "Numeros Vagones"
+    consulta2 = "select Nombre_Estacion, Numero_Vagones_Estacion from Caracteristicas_Estacion where Numero_Vagones_Estacion = 0 or Numero_Vagones_Estacion = 1 group by Nombre_Estacion order by Numero_Vagones_Estacion asc"
+    cursor.execute(consulta2)
+
+    # Obtener los resultados de la consulta y cargarlos en un DataFrame de pandas
+    rows_carr = cursor.fetchall()
+    car_ess = pd.DataFrame(rows_carr, columns=['Nombre_Estacion', 'Numero_Vagones_Estacion'])
 
     # Ejecutar la consulta SQL para obtener los datos de la tabla "Numeros Accesos"
-    consulta2 = "select Nombre_Estacion, Numero_Accesos_Estacion from Caracteristicas_Estacion"
-    cursor.execute(consulta2)
+    consulta3 = "select Nombre_Estacion, Numero_Accesos_Estacion from Caracteristicas_Estacion where Numero_Accesos_Estacion = 2 group by Nombre_Estacion"
+    cursor.execute(consulta3)
 
     # Obtener los resultados de la consulta y cargarlos en un DataFrame de pandas
     rows_ac = cursor.fetchall()
     nu_ac = pd.DataFrame(rows_ac, columns=['Nombre_Estacion', 'Numero_Accesos_Estacion'])
 
+    # Ejecutar la consulta SQL para obtener los datos de la tabla "Numeros Accesos"
+    consulta4 = "select Nombre_Estacion, Numero_Accesos_Estacion from Caracteristicas_Estacion where Numero_Accesos_Estacion = 0 group by Nombre_Estacion"
+    cursor.execute(consulta4)
+
+    # Obtener los resultados de la consulta y cargarlos en un DataFrame de pandas
+    rows_acc = cursor.fetchall()
+    nu_acc = pd.DataFrame(rows_acc, columns=['Nombre_Estacion', 'Numero_Accesos_Estacion'])
 
     # Ejecutar la consulta SQL para obtener los datos de la tabla "Biciestaciones"
-    consulta3 = "select Nombre_Estacion, Biciestacion from Caracteristicas_Estacion"
-    cursor.execute(consulta3)
+    consulta5 = "select nombre_estacion, biciestacion from caracteristicas_estacion where biciestacion >= 1"
+    cursor.execute(consulta5)
 
     # Obtener los resultados de la consulta y cargarlos en un DataFrame de pandas
     rows_bi = cursor.fetchall()
     bici = pd.DataFrame(rows_bi, columns=['Nombre_Estacion', 'Biciestacion'])
 
-    # Ejecutar la consulta SQL para obtener los datos de la tabla "Componentes_wifi"
-    consulta4 = "select Nombre_Estacion, Componente_Wifi from Caracteristicas_Estacion"
-    cursor.execute(consulta4)
-
-    # Obtener los resultados de la consulta y cargarlos en un DataFrame de pandas
-    rows_wi = cursor.fetchall()
-    co_wi = pd.DataFrame(rows_wi, columns=['Nombre_Estacion', 'Componente_Wifi'])
-
-    # Ejecutar la consulta SQL para obtener los datos de la tabla "Estaciones mas optimas"
-    consulta5 = "select Nombre_Estacion, Numero_Vagones_Estacion, Numero_Accesos_Estacion, Biciestacion, Componente_Wifi from Caracteristicas_Estacion where Numero_Vagones_Estacion > 4 and Numero_Accesos_Estacion = 2 and Biciestacion > 1 and Componente_Wifi = 'Si'"
-    cursor.execute(consulta5)
-
-    # Obtener los resultados de la consulta y cargarlos en un DataFrame de pandas
-    rows_mao = cursor.fetchall()
-    mas_op = pd.DataFrame(rows_mao, columns=['Nombre_Estacion', 'Numero_Vagones_Estacion', 'Numero_Accesos_Estacion', 'Biciestacion', 'Componente_Wifi'])
-
-    
-    # Ejecutar la consulta SQL para obtener los datos de la tabla "Estaciones menos optimas"
-    consulta6 = "select Nombre_Estacion, Numero_Vagones_Estacion, Numero_Accesos_Estacion, Biciestacion, Componente_Wifi from Caracteristicas_Estacion where Numero_Vagones_Estacion <= 1 and Numero_Accesos_Estacion = 1 and Biciestacion <= 1 and Componente_Wifi = 'No'"
+     # Ejecutar la consulta SQL para obtener los datos de la tabla "Biciestaciones"
+    consulta6 = "select nombre_estacion, biciestacion from caracteristicas_estacion where biciestacion = 0"
     cursor.execute(consulta6)
 
     # Obtener los resultados de la consulta y cargarlos en un DataFrame de pandas
-    rows_men = cursor.fetchall()
-    men_op = pd.DataFrame(rows_men, columns=['Nombre_Estacion', 'Numero_Vagones_Estacion', 'Numero_Accesos_Estacion', 'Biciestacion', 'Componente_Wifi'])
+    rows_bii = cursor.fetchall()
+    bicii = pd.DataFrame(rows_bii, columns=['Nombre_Estacion', 'Biciestacion'])
+
+    # Ejecutar la consulta SQL para obtener los datos de la tabla "Componentes_wifi"
+    consulta7 = "select Componente_Wifi, count(Componente_Wifi) , rank() over (order by Componente_Wifi desc) as pato from Caracteristicas_Estacion group by Componente_Wifi order by pato"
+    cursor.execute(consulta7)
+
+    # Obtener los resultados de la consulta y cargarlos en un DataFrame de pandas
+    rows_wi = cursor.fetchall()
+    co_wi = pd.DataFrame(rows_wi, columns=['Componente_Wifi', 'wifi','pato'])
+
+    # Ejecutar la consulta SQL para obtener los datos de la tabla "Componentes_wifi"
+    consulta8 = "select Nombre_Estacion, Componente_Wifi from Caracteristicas_Estacion  where Componente_Wifi = 'No'"
+    cursor.execute(consulta8)
+
+    # Obtener los resultados de la consulta y cargarlos en un DataFrame de pandas
+    rows_wii = cursor.fetchall()
+    co_wii = pd.DataFrame(rows_wii, columns=['Nombre_Estacion', 'Componente_Wifi'])
 
 
     # Ejecutar la consulta SQL para obtener los datos de la tabla "Cantidad de estaciones por troncal"
-    consulta7 = "select t.Troncal_Estacion, count(e.Codigo_Estacion) as Numero_Estaciones from Datos_Troncal t join Estaciones_Troncales e on e.Id_Trazado_Troncal = t.Id_Trazado_Troncal group by t.Troncal_Estacion"
-    cursor.execute(consulta7)
+    consulta9 = "select t.Troncal_Estacion, count(e.Codigo_Estacion) as Numero_Estaciones from Datos_Troncal t join Estaciones_Troncales e on e.Id_Trazado_Troncal = t.Id_Trazado_Troncal group by t.Troncal_Estacion"
+    cursor.execute(consulta9)
 
     # Obtener los resultados de la consulta y cargarlos en un DataFrame de pandas
     rows_can = cursor.fetchall()
@@ -106,65 +119,113 @@ try:
         html.P("-La idea que tenemos para este proyecto es usar la base de datos de Trasmilenio más reciente en donde podemos analizar sobre las estaciones troncales"),
         html.P("-Para este proyecto decidimos plantear cinco escenarios con su respectivo analisis y gráfica"),
 
-        html.H3("Primer escenario:"),
+        html.H2("Primer escenario:"),
+        html.P("En este escenario se busca analisar sobre las estaciones que tienen mayor número de vagones, entre 5 - 6; tambien las estaciones con menor número de vagones, entre 0 - 1"),
 
         dcc.Graph(
             id='Tabla1',
-            figure=px.bar(car_es.iloc[0:10], x='Nombre_Estacion', y='Numero_Vagones_Estacion', title='Estaciones con mayor numeros de vagones')),
+            figure=px.bar(car_es, x='Nombre_Estacion', y='Numero_Vagones_Estacion', title='Estaciones con cinco o seís vagones',color_discrete_sequence=["#f3bc26"])
+        ),
 
-        html.H2("Analisis por integrante de grupo:"),
+        dcc.Graph(
+            id='Tabla2',
+            figure=px.bar(car_ess, x='Nombre_Estacion', y='Numero_Vagones_Estacion', title='Estaciones con cero o un vagon')
+        ),
+
+        html.H3("Analisis por integrante de grupo:"),
         html.P("-Gabriela :"),
         html.P("-Camila :"),
         html.P("-Juan Esteban :"),
         html.P("-Juan Diego: "),
 
-        html.H3("Segundo escenario:"),
+        html.H2("Segundo escenario:"),
+        html.P("En este escenario buscamos todas las estaciones con el maximo de accesos (2) y tambien las que no tienen un acceso"),
+
+         dcc.Graph(
+            id='Tabla3',
+            figure=px.bar(nu_ac, x='Nombre_Estacion', y='Numero_Accesos_Estacion', title='Estaciones con el máximo de accesos',color_discrete_sequence=["#dc143c"])
+        ),
 
         dcc.Graph(
-            id='Tabla1',
-            figure=px.bar(car_es.iloc[0:10], x='Nombre_Estacion', y='Numero_Vagones_Estacion', title='Estaciones con mayor numeros de vagones')),
+            id='Tabla4',
+            figure=px.bar(nu_acc, x='Nombre_Estacion', y='Numero_Accesos_Estacion', title='Estaciones sin accesos',color_discrete_sequence=["#f3b407"])
+        ),
 
-        html.H2("Analisis por integrante de grupo:"),
+        html.H3("Analisis por integrante de grupo:"),
         html.P("-Gabriela :"),
         html.P("-Camila :"),
         html.P("-Juan Esteban :"),
         html.P("-Juan Diego: "),
 
-        html.H3("Tercer escenario:"),
+        html.H2("Tercer escenario:"),
+        html.P("En este escenario se desea encontrar las estaciones que cuentan con biciestación y las estaciones que no cuentan con este servicio"),
 
         dcc.Graph(
-            id='Tabla1',
-            figure=px.bar(car_es.iloc[0:10], x='Nombre_Estacion', y='Numero_Vagones_Estacion', title='Estaciones con mayor numeros de vagones')),
+            id='Tabla5',
+            figure=px.bar(bici, x='Nombre_Estacion', y='Biciestacion', title='Estaciones con Biciestaciones',color_discrete_sequence=["#f1666d"])
+        ),
 
-        html.H2("Analisis por integrante de grupo:"),
+        dcc.Graph(
+            id='Tabla6',
+            figure=px.bar(bicii, x='Nombre_Estacion', y='Biciestacion', title='Estaciones sin Biciestaciones')
+        ),
+
+
+        html.H3("Analisis por integrante de grupo:"),
         html.P("-Gabriela :"),
         html.P("-Camila :"),
         html.P("-Juan Esteban :"),
         html.P("-Juan Diego: "),
 
-        html.H3("Cuarto escenario:"),
+        html.H2("Cuarto escenario:"),
+        html.P("En este escenario se señala el porcentaje de las estaciones que poseen algun componente de Wifi, cuales no lo poseen y cuales siguen pendientes"),
 
         dcc.Graph(
-            id='Tabla1',
-            figure=px.bar(car_es.iloc[0:10], x='Nombre_Estacion', y='Numero_Vagones_Estacion', title='Estaciones con mayor numeros de vagones')),
+            id='Tabla7',
+            figure=px.pie(co_wi, values='wifi', names='Componente_Wifi', title='Porcentaje de estaciones con Componente_Wifi',color_discrete_sequence=["#9c0720"])
+        ),
 
-        html.H2("Analisis por integrante de grupo:"),
+
+        html.H3("Analisis por integrante de grupo:"),
         html.P("-Gabriela :"),
         html.P("-Camila :"),
         html.P("-Juan Esteban :"),
         html.P("-Juan Diego: "),
 
-        html.H3("Quinto escenario:"),
+        html.H2("Quinto escenario:"),
+        html.P("En este escenario se observa la cantidad de estaciones que hay por troncal"),
 
         dcc.Graph(
-            id='Tabla1',
-            figure=px.bar(car_es.iloc[0:10], x='Nombre_Estacion', y='Numero_Vagones_Estacion', title='Estaciones con mayor numeros de vagones')),
+            id='Tabla9',
+            figure=px.pie(can_es, names='Troncal_Estacion', values='Numero_Estaciones', title='Cantidad de estaciones por Troncal')
+        ), 
 
-        html.H2("Analisis por integrante de grupo:"),
+        html.H3("Analisis por integrante de grupo:"),
         html.P("-Gabriela :"),
         html.P("-Camila :"),
         html.P("-Juan Esteban :"),
         html.P("-Juan Diego: "),
+
+        html.H2("Sexto escenario:"),
+        html.P("En este ultimo escenario se busca señalar las estaciones exactas que se encuentran en total en la NQS-G y la NQS-E"),
+
+        dcc.Graph(
+            id='Tabla10',
+            figure=px.bar(nqs_es, x='Nombre_Estacion', y='Codigo_Estacion', title='Todas las estaciones que estan en la NQS',color_discrete_sequence=["#9c0720"])
+        ),
+
+        html.H3("Analisis por integrante de grupo:"),
+        html.P("-Gabriela :"),
+        html.P("-Camila :"),
+        html.P("-Juan Esteban :"),
+        html.P("-Juan Diego: "),
+
+        html.H2("Conclusiones por participante del grupo:"),
+        html.P("-Gabriela :"),
+        html.P("-Camila :"),
+        html.P("-Juan Esteban :"),
+        html.P("-Juan Diego: "),
+
     ])
 
     # Ejecutar la aplicación
