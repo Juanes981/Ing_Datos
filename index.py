@@ -120,7 +120,7 @@ try:
         html.P("-Para este proyecto decidimos plantear cinco escenarios con su respectivo analisis y gráfica"),
 
         html.H2("Primer escenario:"),
-        html.P("En este escenario se busca analisar sobre las estaciones que tienen mayor número de vagones, entre 5 - 6; tambien las estaciones con menor número de vagones, entre 0 - 1"),
+        html.P("-En este escenario se busca analisar sobre las estaciones que tienen mayor número de vagones, entre 5 - 6; tambien las estaciones con menor número de vagones, entre 0 - 1"),
 
         dcc.Graph(
             id='Tabla1',
@@ -135,11 +135,11 @@ try:
         html.H3("Analisis por integrante de grupo:"),
         html.P("-Gabriela :"),
         html.P("-Camila :"),
-        html.P("-Juan Esteban :"),
+        html.P("-Juan Esteban: Observando el análisis elaborado de este escenario, se observa que entre Héroes, Marsella, Av. Rojas y Av. Chile son las estaciones con mayor número de vagones, lo cual puede ser usado a favor para las estaciones mencionadas, debido a que se puede mantener un mejor orden y manejo del tránsito de usuarios. Por otro lado, entre los portales y algunas estaciones como Banderas o Museo Nacional, se ve claramente que no cuentan con ningún registro de algún vagón. Esto podría ser ya que podrían contar como estaciones 'especiales', las cuales no se encuentran divididas por vagones, sino que únicamente cuentan con una infraestructura amplia. Esto podría ser algo malo, debido a que el tránsito de usuarios puede ser mal manejado hasta el punto de que la estación esté altamente congestionada, pero a la vez bueno, ya que al no tener vagones fijos registrados, en caso de cambiar algunas rutas, va a ser más sencillo adaptarse que con las estaciones con vagones registrados."),
         html.P("-Juan Diego: "),
 
         html.H2("Segundo escenario:"),
-        html.P("En este escenario buscamos todas las estaciones con el maximo de accesos (2) y tambien las que no tienen un acceso"),
+        html.P("-En este escenario buscamos todas las estaciones con el maximo de accesos (2) y tambien las que no tienen un acceso"),
 
          dcc.Graph(
             id='Tabla3',
@@ -158,7 +158,7 @@ try:
         html.P("-Juan Diego: "),
 
         html.H2("Tercer escenario:"),
-        html.P("En este escenario se desea encontrar las estaciones que cuentan con biciestación y las estaciones que no cuentan con este servicio"),
+        html.P("-En este escenario se desea encontrar las estaciones que cuentan con biciestación y las estaciones que no cuentan con este servicio"),
 
         dcc.Graph(
             id='Tabla5',
@@ -178,7 +178,7 @@ try:
         html.P("-Juan Diego: "),
 
         html.H2("Cuarto escenario:"),
-        html.P("En este escenario se señala el porcentaje de las estaciones que poseen algun componente de Wifi, cuales no lo poseen y cuales siguen pendientes"),
+        html.P("-En este escenario se señala el porcentaje de las estaciones que poseen algun componente de Wifi, cuales no lo poseen y cuales siguen pendientes"),
 
         dcc.Graph(
             id='Tabla7',
@@ -193,7 +193,7 @@ try:
         html.P("-Juan Diego: "),
 
         html.H2("Quinto escenario:"),
-        html.P("En este escenario se observa la cantidad de estaciones que hay por troncal"),
+        html.P("-En este escenario se observa la cantidad de estaciones que hay por troncal"),
 
         dcc.Graph(
             id='Tabla9',
@@ -207,7 +207,7 @@ try:
         html.P("-Juan Diego: "),
 
         html.H2("Sexto escenario:"),
-        html.P("En este ultimo escenario se busca señalar las estaciones exactas que se encuentran en total en la NQS-G y la NQS-E"),
+        html.P("-En este ultimo escenario se busca señalar las estaciones exactas que se encuentran en total en la NQS-G y la NQS-E"),
 
         dcc.Graph(
             id='Tabla10',
