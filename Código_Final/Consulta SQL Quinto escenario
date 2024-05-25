@@ -1,0 +1,7 @@
+--Consulta para obtener Cuantas estaciones con wifi tiene cada troncal
+select d.Troncal_Estacion, count(*) AS Numero_Estaciones_Con_Wifi 
+from Datos_Troncal d 
+join Estaciones_Troncales es on d.Id_Trazado_Troncal = es.Id_Trazado_Troncal 
+join Caracteristicas_Estacion c on es.Nombre_Estacion = c.Nombre_Estacion
+where c.Componente_Wifi = 'Si' 
+gruop by d.Troncal_Estacion; 
