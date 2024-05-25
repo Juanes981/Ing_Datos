@@ -1,0 +1,46 @@
+--Consultas para obtener El numero de vagones por cada troncal
+
+--Consulta para obtener El numero de vagones por la troncal Autonorte
+select c.Nombre_Estacion, c.numero_vagones_estacion 
+from caracteristicas_estacion c 
+join estaciones_troncales es on c.nombre_estacion = es.nombre_estacion 
+join datos_troncal d on d.id_trazado_troncal = es.id_trazado_troncal  
+where troncal_estacion = 'Autonorte'
+
+--Consulta para obtener El numero de vagones por la troncal Americas
+select c.Nombre_Estacion, c.numero_vagones_estacion 
+from caracteristicas_estacion c 
+join estaciones_troncales es on c.nombre_estacion = es.nombre_estacion 
+join datos_troncal d on d.id_trazado_troncal = es.id_trazado_troncal  
+where troncal_estacion = 'Americas'
+
+--Consulta para obtener El numero de vagones por la troncal Calle 26
+select c.Nombre_Estacion, c.numero_vagones_estacion 
+from caracteristicas_estacion c 
+join estaciones_troncales es on c.nombre_estacion = es.nombre_estacion 
+join datos_troncal d on d.id_trazado_troncal = es.id_trazado_troncal  
+where troncal_estacion = 'Calle 26'
+
+--Consulta para obtener El numero de vagones por la troncal NQS
+select c.Nombre_Estacion, c.numero_vagones_estacion f
+rom caracteristicas_estacion c 
+join estaciones_troncales es on c.nombre_estacion = es.nombre_estacion 
+join datos_troncal d on d.id_trazado_troncal = es.id_trazado_troncal  
+where d.Troncal_Estacion in ('NQS-E', 'NQS-G')
+
+--Consulta para obtener El numero de vagones por la troncal Caracas
+select c.Nombre_Estacion, c.numero_vagones_estacion 
+from caracteristicas_estacion c 
+join estaciones_troncales es on c.nombre_estacion = es.nombre_estacion 
+join datos_troncal d on d.id_trazado_troncal = es.id_trazado_troncal  
+where d.Troncal_Estacion in ('Caracas-S', 'Caracas-T')
+
+
+
+
+
+
+
+
+
+

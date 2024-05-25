@@ -1,0 +1,6 @@
+--Consulta para obtener Cuantas estaciones con biciestaciones tiene cada troncal
+select troncal_estacion, sum(biciestacion) 
+from datos_troncal 
+join estaciones_troncales es on datos_troncal.id_trazado_troncal = es.id_trazado_troncal 
+join caracteristicas_estacion c on es.nombre_estacion = c.nombre_estacion 
+group by troncal_estacion 

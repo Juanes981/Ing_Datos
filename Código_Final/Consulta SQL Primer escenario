@@ -1,0 +1,5 @@
+--Consulta para obtener La Cantidad de estaciones por troncal
+select t.Troncal_Estacion, count(e.Codigo_Estacion) as Numero_Estaciones 
+from Datos_Troncal t 
+join Estaciones_Troncales e on e.Id_Trazado_Troncal = t.Id_Trazado_Troncal 
+group by t.Troncal_Estacion
