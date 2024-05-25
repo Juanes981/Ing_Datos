@@ -157,7 +157,7 @@ try:
         ), 
 
         html.H3("Analisis por integrante de grupo:"),
-        html.P("-Gabriela :"),
+        html.P("-Gabriela : Al observar esta gráfica, podemos afirmar que las troncales con más estaciones son Autonorte, Américas, Calle 26, NQS y Caracas. Esto probablemente se deba a su mayor extensión geográfica. Por lo tanto, al evaluar estas cinco troncales, podremos obtener una visión representativa de las condiciones en una gran parte de las estaciones de Bogotá."),
         html.P("-Camila :"),
         html.P("-Juan Esteban: A partir de la gráfica de pie se puede observar que "),
         html.P("-Juan Diego: "),
@@ -191,7 +191,7 @@ try:
         ),
 
         html.H3("Analisis por integrante de grupo:"),
-        html.P("-Gabriela :"),
+        html.P("-Gabriela : Antes de analizar las gráficas de este primer escenario, es importante tener en cuenta que tener un número de vagones mayor a 3 es beneficioso. Esto permite que más rutas puedan parar en estas estaciones. Por el contrario, tener un número de vagones menor a 3 no es beneficioso, ya que menos rutas pueden detenerse en dichas estaciones, lo que empeora la experiencia de usar el transporte público. Al observar la primera gráfica, podemos ver que la troncal Autonorte tiene 9 estaciones con un número de vagones superior a 3 y 8 estaciones con un número de vagones menor a 3. En la segunda gráfica, se observa que la troncal Américas tiene 8 estaciones con un número de vagones mayor a 3 y 8 estaciones con un número de vagones menor a 3. En la tercera gráfica, podemos ver que la troncal Calle 26 tiene 8 estaciones con un número de vagones mayor a 3 y 6 estaciones con un número de vagones menor a 3. En la cuarta gráfica, se muestra que la troncal NQS tiene 4 estaciones con un número de vagones mayor a 3 y 20 estaciones con un número de vagones menor a 3. Finalmente, en la última gráfica, podemos ver que la troncal Caracas tiene una estación con un número de vagones mayor a 3 y 26 estaciones con un número de vagones menor a 3. Podemos concluir que la Calle 26 es la troncal con mayor número de estaciones con más de 3 vagones, mientras que la Caracas es la troncal con el menor número de estaciones con más de 3 vagones."),
         html.P("-Camila :"),
         html.P("-Juan Esteban :"),
         html.P("-Juan Diego: "),
@@ -226,7 +226,7 @@ try:
 
 
         html.H3("Analisis por integrante de grupo:"),
-        html.P("-Gabriela :"),
+        html.P("-Gabriela : Antes de analizar las gráficas de este escenario, es importante tener en cuenta que contar con un mayor número de accesos es beneficioso, ya que aumenta la capacidad de flujo de los pasajeros, reduciendo la congestión y facilitando el acceso rápido a los buses del TransMilenio. Por el contrario, tener un menor número de accesos no es favorable, ya que esto dificulta la accesibilidad en las estaciones, lo que puede ocasionar problemas de aglomeración, especialmente en horas pico. Al observar la primera gráfica, notamos que la troncal Autonorte cuenta solo con 2 estaciones con 2 accesos a la estación y 15 estaciones con un solo acceso. En la segunda gráfica, vemos que la troncal Américas tiene 9 estaciones con dos accesos y 8 estaciones con solo un acceso. En la tercera gráfica, la troncal Calle 26 presenta 3 estaciones con dos accesos y 11 estaciones con solo un acceso. La cuarta gráfica muestra que la troncal NQS tiene 6 estaciones con dos accesos y 18 estaciones con solo un acceso. Finalmente, en la última gráfica, la troncal Caracas cuenta con 20 estaciones con dos accesos y 7 estaciones con solo un acceso. Podemos concluir que Caracas es la troncal con el mayor número de estaciones con 2 accesos, mientras que Autonorte es la que tiene menos estaciones con 2 accesos. "),
         html.P("-Camila :"),
         html.P("-Juan Esteban :"),
         html.P("-Juan Diego: "),
@@ -241,7 +241,7 @@ try:
 
 
         html.H3("Analisis por integrante de grupo:"),
-        html.P("-Gabriela :"),
+        html.P("-Gabriela : Tener wifi en las estaciones es beneficioso, ya que proporciona una mejor experiencia en el uso del transporte público y permite acceder a información sobre horarios y rutas alternativas. En caso de emergencia, el usuario tendrá una forma más accesible de comunicarse con una autoridad. Al analizar la gráfica, podemos observar qué CR7-10, Suba, NQS y Caracas tienen un mayor número de estaciones con wifi, mientras que Autonorte y Calle 26 tienen un bajo número de estaciones con wifi en relación con su cantidad total. Por otro lado, Soacha, Tunal y Eje Ambiental son las troncales que tienen menos estaciones con wifi, pero hay que tener en cuenta que estas troncales tienen muy pocas estaciones en total."),
         html.P("-Camila :"),
         html.P("-Juan Esteban :"),
         html.P("-Juan Diego: "),
@@ -255,13 +255,13 @@ try:
         ),
 
         html.H3("Analisis por integrante de grupo:"),
-        html.P("-Gabriela :"),
+        html.P("-Gabriela : Tener biciestaciones en las estaciones es importante, ya que hace que sea más accesible llegar a ellas, permite viajes más flexibles y promueve el uso de la bicicleta, lo que ayuda a reducir la congestión. Observando la gráfica, podemos notar que son muy pocas las estaciones que cuentan con biciestaciones. La troncal Américas es la que tiene más estaciones con biciestaciones, con un total de 5 estaciones, pero considerando la cantidad total de estaciones que tiene esta troncal, es un número muy reducido. Es preocupante analizar la troncal Caracas, considerada una de las más importantes de la ciudad, y ver que no cuenta con ninguna estación con biciestaciones. Lo mismo sucede con la NQS, otra troncal muy relevante en la ciudad, que solo tiene un total de 3 biciestaciones en sus muchas estaciones. Definitivamente, es necesario mejorar este aspecto. Trabajar en la expansión y mejora de las biciestaciones en las troncales no solo beneficiaría a los usuarios del transporte público, sino que también tendría un impacto positivo en la movilidad urbana y en la calidad de vida de los ciudadanos."),
         html.P("-Camila :"),
         html.P("-Juan Esteban :"),
         html.P("-Juan Diego: "),
 
         html.H2("Conclusiones por participante del grupo:"),
-        html.P("-Gabriela :"),
+        html.P("-Gabriela : La selección de la base de datos resultó ser un proceso interesante. Necesitábamos encontrar una base de datos pública que fuera relevante para nuestro proyecto. Finalmente, optamos por utilizar la base de datos de TransMilenio, dado que es un sistema de transporte de uso cotidiano y consideramos que explorarla más a fondo sería beneficioso. Durante este proceso, aprendimos mucho sobre las estaciones troncales del TransMilenio y su funcionamiento. Cumplimos con los objetivos del proyecto, que incluían el diseño y la carga de la base de datos, así como el análisis de diferentes escenarios utilizando visualizaciones apropiadas. El diseño de la base de datos presentó ciertas complicaciones, ya que nos encontramos con una gran cantidad de datos dispersos. Fue necesario analizar minuciosamente cada uno de ellos para identificar las conexiones y discrepancias. Resultó sorprendente descubrir que una entidad tan importante como TransMilenio no contaba con una estructura de base de datos claramente definida. Durante el proceso de carga de datos, surgieron algunos contratiempos. Al realizar la carga masiva, nos percatamos de varios errores en la base de datos, como la mezcla de paradas de SITP con troncales de TransMilenio y la presencia de identificadores duplicados en algunas troncales. Fue necesario corregir estos problemas para garantizar una carga de datos exitosa. Una vez completada la carga de datos, procedimos a analizar los escenarios que podríamos evaluar con la base de datos. Esta tarea resultó ser desafiante debido a la gran cantidad de datos duplicados. Además, tuvimos que determinar qué tipos de gráficas serían útiles para cada escenario evaluado. Aprendimos a utilizar diferentes herramientas, como DAS, para crear visualizaciones que facilitaran un análisis más completo. En conclusión, este proyecto fue una experiencia enriquecedora. Aprendimos mucho sobre SQL y DAS, así como sobre las estaciones troncales del TransMilenio y su importancia en el contexto del transporte público en la ciudad. Estamos satisfechos de haber cumplido con los objetivos del proyecto y esperamos poder aplicar estos conocimientos en futuros proyectos."),
         html.P("-Camila :"),
         html.P("-Juan Esteban :"),
         html.P("-Juan Diego: "),
